@@ -1,0 +1,5 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# terraform.tfvars is where your real config goes — don't commit it if this
+# repo is public (add it to .gitignore alongside *.pem).
+
+aws_region = "ap-south-1" # change if you're not near Mumbai
