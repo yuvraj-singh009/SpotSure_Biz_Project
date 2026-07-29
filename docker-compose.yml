@@ -4,9 +4,8 @@ services:
   backend:
     build: .
     container_name: chat-backend
-    # Changed from expose to ports to ensure the backend explicitly binds the port internally
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     restart: unless-stopped
     networks:
       - chat-net
@@ -20,8 +19,7 @@ services:
       - ./frontend:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      backend:
-        condition: service_started # Forces Nginx to wait until the backend container running status is confirmed
+      - backend
     restart: unless-stopped
     networks:
       - chat-net

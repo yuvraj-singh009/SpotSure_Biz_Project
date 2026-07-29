@@ -16,6 +16,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            mkdir -p ~/devops
+            cd ~/devops
+
             cd ~/devops
             git pull origin main
             docker compose down
