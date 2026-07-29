@@ -10,7 +10,7 @@ The application is built using two primary containers:
 1. **Backend (`backend`)**: A Python-based FastAPI server operating on Port 8000. It handles persistent, real-time WebSocket connections on the `/ws` endpoint.
 2. **Frontend Proxy (`nginx`)**: An NGINX container mapped to Port 80. It is responsible for serving the static files from the `frontend/` directory, while simultaneously intercepting and reverse-proxying all WebSocket upgrade requests down to the backend container.
 
-### Directory Structure
+### Directory StructureE
 ```text
 realtime-chat-app/
 ├── app/
