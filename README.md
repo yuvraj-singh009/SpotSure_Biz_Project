@@ -35,7 +35,7 @@ The FastAPI backend container is refusing external connections—even from the N
 If you navigate to `http://localhost` right now, you will likely see the default "Welcome to NGINX" page instead of the chat application.
 * **Hint:** Check `docker-compose.yml`. How is the `nginx` container supposed to get access to the static HTML files located in the local `frontend/` directory? 
 
-### 3. Fix the WebSocket Tunnel (Reverse Proxy Configuration)
+### 3. Fix the WebSocket Tunnel (Reverse Proxy Configuration.)
 Once the UI is visible, the chat app will continuously say "Disconnected" because the WebSocket handshake is failing.
 * **Hint #1:** In `nginx.conf`, the `proxy_pass` is attempting to route to `localhost:8000`. Does `localhost` mean the same thing inside the NGINX container as it does on your laptop? How do containers communicate with each other in a Compose network?
 * **Hint #2:** NGINX requires explicit headers to convert standard HTTP traffic into a persistent WebSocket tunnel. Some of the required `Upgrade` headers appear to be missing or disabled.
